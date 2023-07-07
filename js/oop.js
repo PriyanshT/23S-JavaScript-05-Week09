@@ -62,14 +62,25 @@ output.textContent = p1.interests[1];
 output.textContent = p2.bio();
 
 /* STEP 4a: Alternatively, you can use the Object() constructor to create an object. eg. car*/
+var car = new Object();
 
 /* STEP 4b: Once 'car' is created, add various properties and methods… */
+car.brand = "Honda";
+car.color = "Green";
+car.price = 50;
+car.fun = function () {
+    return `The car description is: ${car.brand}, ${car.color}, ${car.price}.`;
+}
 
-/* STEP 4c: Change some of the properties of 'car' in the console, then invoke the car.blurb() function */
+/* STEP 4c: Change some of the properties of 'car' in the console, then invoke the car.fun() function */
+car.price = 100;
 
-/* STEP 5a: Yet another approach is to use the create() method. Let's see how the above car object can be used to create another object */
+/* STEP 5a: Yet another approach is to use the create() method. 
+Let's see how the above car object can be used to create another object */
+var anotherCar = Object.create(car);
 
 /* STEP 5b: Output to the paragraph anotherCar.brand - you will see that it has retained the properties of the original object. */
+console.log(anotherCar.brand);
 
 // That's it! Now on to Lab 8...
 // Create a JavaScript function that permits the creation of a hamburger object
